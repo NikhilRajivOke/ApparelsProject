@@ -1,0 +1,115 @@
+header {
+    /* background-color: #282c34; */
+    color: rgb(0, 0, 0);
+    padding: 20px 40px; /* Adds space around the content inside the header */
+    display: flex; /* Make the header a flex container */
+    justify-content: flex-start; /* Align items at the start (left) */
+    align-items: center; /* Vertically center the items */
+    gap: 50px;
+    margin-top: 20px;
+}
+
+/* for icon and title adjustment */
+header h1 {
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgb(8, 0, 0);
+    margin: 0;
+    padding: 0;
+}
+  
+nav ul {
+    list-style-type: none; /* Removes the bullet points */
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block; /* Align items horizontally */
+    align-items: center; 
+    margin: 0 30px; /* Adds horizontal spacing between the items */
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;           /* Use Flexbox to align icon and text horizontally */
+    align-items: center;     /* Vertically align icon and text */
+    gap: 10px;
+}
+
+/* icons */
+nav a svg {
+    font-size: 20px; /* Adjust the size of the icon */
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: deepskyblue;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute; /* top left corner */
+    top: 20px;
+    left: 20px;
+}
+
+.hamburger div { /* customize hamburger menu lines */
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    border-radius: 5px;
+}
+
+/* Media query for hamburger */
+@media (max-width: 800px) {
+    /* center header and align with hamburger menu */
+    header {
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    header h1 {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger-active nav ul  {
+        display: flex;
+        flex-direction: column; /* Stack the navigation items vertically */
+        gap: 20px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(181, 0, 0);
+        padding: 10px 0;
+        text-align: left;
+        z-index: 1000; /* Ensure it's on top */
+    }
+
+    nav li {
+        display: flex; /* Make each list item a block element */
+        color: white;
+    }
+}
